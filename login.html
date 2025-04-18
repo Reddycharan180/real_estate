@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Match</title>
+    <script>
+        function validateForm() {
+            let password = document.getElementById("password").value;
+            let cpassword = document.getElementById("cpassword").value;
+
+            if (password !== cpassword) {
+                alert(" Passwords do not match!");
+                return false; 
+            }
+
+            return true; 
+        }
+    </script>
+</head>
+<body>
+    <form action="sub.php" method="POST" onsubmit="return validateForm()">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="cpassword">Confirm Password:</label><br>
+        <input type="password" id="cpassword" name="cpassword" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
